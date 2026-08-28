@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" role="img" aria-labelledby="title desc">
+  <title id="title">MKVSNX MVX monogram</title>
+  <desc id="desc">A geometric M with a central V notch and integrated X, rendered in blue, violet and cyan.</desc>
+  <defs>
+    <linearGradient id="m" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#36d8ff"/>
+      <stop offset=".38" stop-color="#4f7cff"/>
+      <stop offset=".72" stop-color="#8a50ff"/>
+      <stop offset="1" stop-color="#d84cff"/>
+    </linearGradient>
+    <linearGradient id="x" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#6657ff"/>
+      <stop offset=".5" stop-color="#a84cff"/>
+      <stop offset="1" stop-color="#39e1ff"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity=".58"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#glow)">
+    <path fill="url(#m)" d="M9 101 28 20h25l28 45 29-45h24l17 81h-25l-10-48-25 42H72L47 53l-12 48H9Z"/>
+    <path fill="#08132f" fill-opacity=".44" d="M53 20 81 65 72 80 43 33 47 20h6Zm57 0-29 45 10 17 30-49-4-13h-7Z"/>
+    <path fill="url(#x)" d="M112 20h28l31 81h-28l-18-48-29 48H69l43-81Z"/>
+    <path fill="url(#x)" d="M159 20h-27l-19 31 12 30 46-61h-12Z" opacity=".96"/>
+    <path fill="url(#shine)" d="M29 25h18L31 94H17l12-69Zm87 0h14l-39 64H78l38-64Zm25 2h12l-34 45-6-15 28-30Z" opacity=".45"/>
+  </g>
+</svg>
