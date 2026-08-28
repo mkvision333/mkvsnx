@@ -34,7 +34,6 @@
     footerRoot.innerHTML=`<footer class="site-footer"><div class="container"><div class="footer-shell footer-grid"><div><div class="footer-brand-row"><img src="${base}assets/icons/mkvsnx-mvx.svg" alt=""><strong>MKVSNX</strong></div><div class="footer-copy">Apps • Software • AI<br>Focused digital products built to evolve.</div></div><div><strong>Explore</strong><div class="footer-stack"><a href="${base}index.html">Home</a><a href="${base}index.html#solutions">Solutions</a><a href="${base}index.html#products">Products</a><a href="${base}about/index.html">About</a><a href="${supportHref}">Support</a></div></div><div><strong>Legal & Contact</strong><div class="footer-stack"><a href="${privacyHref}">Privacy Center</a><a href="${termsHref}">Terms</a><a href="${base}contact/index.html">Contact</a></div></div><div><strong>Products</strong><div class="footer-stack"><a href="${base}build-book/index.html">Build Book</a><a href="${base}pro-kp-astrology/index.html">Pro KP Astrology</a><span>Reawakening — In Development</span><span>More products — Upcoming</span></div><div class="footer-copy">© ${year} MKVSNX. India.</div></div></div></div></footer>`;
   }
 
-  /* Keep secondary pages visually stable on navigation: no entrance/reveal animation. */
   function showContentImmediately(scope){
     (scope||document).querySelectorAll('[data-reveal]').forEach(item=>item.classList.add('is-visible'));
   }
@@ -52,9 +51,5 @@
 
   function setupSearch(){const input=document.querySelector('[data-app-search]'),mounts=document.querySelectorAll('[data-app-grid-searchable]');if(!input||!mounts.length)return;input.addEventListener('input',()=>{mounts.forEach(m=>m.dataset.search=input.value);renderAppCards();});}
 
-  if(page!=="home"){
-    const designCss=document.createElement('link');designCss.rel='stylesheet';designCss.href=`${base}assets/css/site-future.css`;document.head.appendChild(designCss);
-    const navCss=document.createElement('link');navCss.rel='stylesheet';navCss.href=`${base}assets/css/global-nav.css`;document.head.appendChild(navCss);
-  }
   renderHeader();renderFooter();showContentImmediately();setupRipples();setupSearch();renderAppCards();
 })();
