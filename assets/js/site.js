@@ -55,10 +55,8 @@
   function setupSearch(){const input=document.querySelector('[data-app-search]'),mounts=document.querySelectorAll('[data-app-grid-searchable]');if(!input||!mounts.length)return;input.addEventListener('input',()=>{mounts.forEach(m=>m.dataset.search=input.value);renderAppCards();});}
 
   if(page!=="home"){
-    const css=document.createElement('link');
-    css.rel='stylesheet';
-    css.href=`${base}assets/css/site-future.css`;
-    document.head.appendChild(css);
+    const designCss=document.createElement('link');designCss.rel='stylesheet';designCss.href=`${base}assets/css/site-future.css`;document.head.appendChild(designCss);
+    const navCss=document.createElement('link');navCss.rel='stylesheet';navCss.href=`${base}assets/css/global-nav.css`;document.head.appendChild(navCss);
   }
   renderHeader();renderFooter();setupReveal();setupRipples();setupSearch();renderAppCards();
 })();
