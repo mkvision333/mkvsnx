@@ -1,0 +1,25 @@
+{
+  "name": "MKVSNX",
+  "short_name": "MKVSNX",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F7F8FB",
+  "theme_color": "#18243A",
+  "icons": [
+    {
+      "src": "192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

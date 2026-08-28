@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Build Book",
+    "slug": "build-book",
+    "tagline": "Construction management for modern field teams.",
+    "category": "Construction Management",
+    "status": "Available",
+    "platforms": ["Android"],
+    "accent": "gold",
+    "icon": "BB",
+    "description": "Plan projects, track site diaries, manage costs, export PDF, Excel, and CSV reports, and unlock premium access with Build Book Pro.",
+    "features": ["Projects", "Site Diary", "Tasks", "Estimates", "Income & Expense", "PDF/Excel/CSV Exports", "Build Book Pro", "Restore Purchases", "Photos", "Materials", "Labour", "Bills"]
+  },
+  {
+    "name": "Pro KP Astrology",
+    "slug": "pro-kp-astrology",
+    "tagline": "Professional KP astrology with clarity and speed.",
+    "category": "Astrology",
+    "status": "Available",
+    "platforms": ["Android"],
+    "accent": "purple",
+    "icon": "KP",
+    "description": "Create charts, check panchangam, review horary insights, and explore daily guidance in a refined astrology toolkit.",
+    "features": ["KP Horoscope", "Panchangam", "Charts", "Daily Score", "Good Times", "Numerology", "Baby Names", "Horary", "Consultation"]
+  },
+  {
+    "name": "Weather Atmos 3D",
+    "slug": "weather-atmos-3d",
+    "tagline": "Immersive weather intelligence on a living globe.",
+    "category": "Weather",
+    "status": "Available",
+    "platforms": ["Android"],
+    "accent": "blue",
+    "icon": "WA",
+    "description": "See wind, rain, lightning, cyclones, earthquakes, ocean data, and terrain layers through a cinematic 3D weather experience.",
+    "features": ["3D Globe", "Wind", "Pressure", "Humidity", "Cyclones", "Rain", "Lightning", "Earthquakes", "Ocean", "Terrain"]
+  },
+  {
+    "name": "APPEL",
+    "slug": "appel",
+    "tagline": "A school ERP designed for connected communities.",
+    "category": "Education",
+    "status": "Available",
+    "platforms": ["Android"],
+    "accent": "green",
+    "icon": "AP",
+    "description": "Bring attendance, fees, homework, results, teacher workflows, and parent communication into one organized system.",
+    "features": ["Attendance", "Fees", "Homework", "Results", "Teachers", "Parents", "School AI"]
+  },
+  {
+    "name": "Games",
+    "slug": "games",
+    "tagline": "Interactive entertainment experiences by MKVSNX.",
+    "category": "Future Apps",
+    "status": "Coming Soon",
+    "platforms": ["Android", "iOS"],
+    "accent": "blue",
+    "icon": "GM",
+    "description": "Playful, polished game experiences with cloud-ready architecture for progress, achievements, and future live content.",
+    "features": ["Game Progress", "Achievements", "Leaderboards", "Events"]
+  },
+  {
+    "name": "Fitness",
+    "slug": "fitness",
+    "tagline": "Simple fitness tracking that fits everyday routines.",
+    "category": "Future Apps",
+    "status": "Coming Soon",
+    "platforms": ["Android", "iOS"],
+    "accent": "green",
+    "icon": "FT",
+    "description": "Workouts, habits, and activity trends designed to help people build healthier momentum without friction.",
+    "features": ["Workout History", "Steps", "Goals", "Progress Trends"]
+  },
+  {
+    "name": "Health",
+    "slug": "health",
+    "tagline": "Private, thoughtful health tools for personal insight.",
+    "category": "Future Apps",
+    "status": "Coming Soon",
+    "platforms": ["Android", "iOS"],
+    "accent": "purple",
+    "icon": "HL",
+    "description": "Health-focused experiences built around privacy, clarity, and structured records when people need them most.",
+    "features": ["Health Records", "Reminders", "Trends", "Secure Access"]
+  },
+  {
+    "name": "Media",
+    "slug": "media",
+    "tagline": "Creative media tools for modern mobile workflows.",
+    "category": "Future Apps",
+    "status": "Coming Soon",
+    "platforms": ["Android", "iOS"],
+    "accent": "gold",
+    "icon": "MD",
+    "description": "Capture, organize, and refine photos and video workflows with fast, approachable tools for creators.",
+    "features": ["Photos", "Videos", "Albums", "Editing Tools"]
+  }
+]
