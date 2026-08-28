@@ -34,11 +34,9 @@
     footerRoot.innerHTML=`<footer class="site-footer"><div class="container"><div class="footer-shell footer-grid"><div><div class="footer-brand-row"><img src="${base}assets/icons/mkvsnx-mvx.svg" alt=""><strong>MKVSNX</strong></div><div class="footer-copy">Apps • Software • AI<br>Focused digital products built to evolve.</div></div><div><strong>Explore</strong><div class="footer-stack"><a href="${base}index.html">Home</a><a href="${base}index.html#solutions">Solutions</a><a href="${base}index.html#products">Products</a><a href="${base}about/index.html">About</a><a href="${supportHref}">Support</a></div></div><div><strong>Legal & Contact</strong><div class="footer-stack"><a href="${privacyHref}">Privacy Center</a><a href="${termsHref}">Terms</a><a href="${base}contact/index.html">Contact</a></div></div><div><strong>Products</strong><div class="footer-stack"><a href="${base}build-book/index.html">Build Book</a><a href="${base}pro-kp-astrology/index.html">Pro KP Astrology</a><span>Reawakening — In Development</span><span>More products — Upcoming</span></div><div class="footer-copy">© ${year} MKVSNX. India.</div></div></div></div></footer>`;
   }
 
-  function setupReveal(scope){
-    const items=(scope||document).querySelectorAll('[data-reveal]');
-    if(!items.length||!('IntersectionObserver' in window)){items.forEach(i=>i.classList.add('is-visible'));return;}
-    const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}})},{threshold:.16});
-    items.forEach(i=>observer.observe(i));
+  /* Keep secondary pages visually stable on navigation: no entrance/reveal animation. */
+  function showContentImmediately(scope){
+    (scope||document).querySelectorAll('[data-reveal]').forEach(item=>item.classList.add('is-visible'));
   }
 
   function setupRipples(scope){
@@ -49,7 +47,7 @@
     const mounts=document.querySelectorAll('[data-app-grid]');
     if(!mounts.length||!window.MKVSNXApps)return;
     const apps=await window.MKVSNXApps.load(base);
-    mounts.forEach(mount=>{const mode=mount.dataset.appGrid;const query=(mount.dataset.search||'').trim().toLowerCase();let filtered=mode==='featured'?apps.slice(0,4):apps.slice();if(mode==='coming-soon')filtered=filtered.filter(app=>app.status==='Coming Soon');if(query)filtered=filtered.filter(app=>`${app.name} ${app.category} ${app.description} ${app.features.join(' ')}`.toLowerCase().includes(query));mount.innerHTML=filtered.map(app=>`<article class="app-card" data-reveal><div class="app-icon accent-${app.accent}">${app.icon}</div><div class="pill-row"><span class="pill">${app.category}</span><span class="pill">${app.status}</span></div><h3>${app.name}</h3><p>${app.description}</p><ul class="feature-list">${app.features.slice(0,4).map(feature=>`<li>${feature}</li>`).join('')}</ul><div class="button-row"><a class="button button-primary" href="${base}${app.slug}/${mode==='support'?'support.html':mode==='privacy'?'privacy.html':'index.html'}">${mode==='support'?'Support':mode==='privacy'?'Privacy Policy':'Learn More'}</a><a class="button button-secondary" href="${base}${app.slug}/${mode==='support'?'privacy.html':'support.html'}">${mode==='support'?'Privacy':'Support'}</a></div></article>`).join('');if(!filtered.length)mount.innerHTML='<article class="info-card" data-reveal><h3>No matching apps</h3><p>Try a different search term or browse the full portfolio.</p></article>';setupReveal(mount);setupRipples(mount);});
+    mounts.forEach(mount=>{const mode=mount.dataset.appGrid;const query=(mount.dataset.search||'').trim().toLowerCase();let filtered=mode==='featured'?apps.slice(0,4):apps.slice();if(mode==='coming-soon')filtered=filtered.filter(app=>app.status==='Coming Soon');if(query)filtered=filtered.filter(app=>`${app.name} ${app.category} ${app.description} ${app.features.join(' ')}`.toLowerCase().includes(query));mount.innerHTML=filtered.map(app=>`<article class="app-card" data-reveal><div class="app-icon accent-${app.accent}">${app.icon}</div><div class="pill-row"><span class="pill">${app.category}</span><span class="pill">${app.status}</span></div><h3>${app.name}</h3><p>${app.description}</p><ul class="feature-list">${app.features.slice(0,4).map(feature=>`<li>${feature}</li>`).join('')}</ul><div class="button-row"><a class="button button-primary" href="${base}${app.slug}/${mode==='support'?'support.html':mode==='privacy'?'privacy.html':'index.html'}">${mode==='support'?'Support':mode==='privacy'?'Privacy Policy':'Learn More'}</a><a class="button button-secondary" href="${base}${app.slug}/${mode==='support'?'privacy.html':'support.html'}">${mode==='support'?'Privacy':'Support'}</a></div></article>`).join('');if(!filtered.length)mount.innerHTML='<article class="info-card" data-reveal><h3>No matching apps</h3><p>Try a different search term or browse the full portfolio.</p></article>';showContentImmediately(mount);setupRipples(mount);});
   }
 
   function setupSearch(){const input=document.querySelector('[data-app-search]'),mounts=document.querySelectorAll('[data-app-grid-searchable]');if(!input||!mounts.length)return;input.addEventListener('input',()=>{mounts.forEach(m=>m.dataset.search=input.value);renderAppCards();});}
@@ -58,5 +56,5 @@
     const designCss=document.createElement('link');designCss.rel='stylesheet';designCss.href=`${base}assets/css/site-future.css`;document.head.appendChild(designCss);
     const navCss=document.createElement('link');navCss.rel='stylesheet';navCss.href=`${base}assets/css/global-nav.css`;document.head.appendChild(navCss);
   }
-  renderHeader();renderFooter();setupReveal();setupRipples();setupSearch();renderAppCards();
+  renderHeader();renderFooter();showContentImmediately();setupRipples();setupSearch();renderAppCards();
 })();
